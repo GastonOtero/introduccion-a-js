@@ -7,70 +7,210 @@ usando  elementos de programación simples y clásicos.
 
 /*
 Desafío de programación #1: Imprimí los números del 1 al 10
+ */
 
- Resultado: 10 9 8 7 6 5 4 3 2 1
+function imprimirDelUnoAlDiez(){
+    for (let i = 1; i <= 10; i++){
+      console.log(i);
+    }
+};
+imprimirDelUnoAlDiez();
 
- Desafìo de programación  #2: Imprimí los números impares del 1 al 100
+/*
+Desafìo de programación  #2: Imprimí los números impares del 1 al 100
+*/
 
- 1 3 5 ... 99
+function imprimirImparesDeUnoACien(){
+  for (let i = 1; i <= 100; i+=2){
+    console.log(i);
+  }
+}
+imprimirImparesDeUnoACien();
 
+/*
 Desafío de programación #3: Imprimí la tabla de multiplicación del 7
+*/
+function imprimirTablaDelSiete(){
+  const EL_NUMERO_SIETE = 7;
+  for (let i = 0; i <= 9; i++){
+    console.log(`7 x ${i} = ${EL_NUMERO_SIETE * i}`)
+  }
+}
+imprimirTablaDelSiete();
 
- 7x0 = 0
- 7x1 = 7
- ...
- 7x9 = 63
-
+/*
 Desafío de programación #4: Imprimí todas las tablas de multiplicación del 1 al 9
+*/
 
- 1x0 = 0
- ...
- 1x9 = 9
- 2x0 = 0
- ...
- 2x9 = 18
- ...
- ...
- 9x9 = 81
+function imprimirTablasDeMultiplicacion(){
+  for (let i = 1; i <= 9; i++){
+    for(let j = 0; j <= 9; j++){
+      console.log(`${i} x ${j} = ${i * j}`);
+    }
+  }
+}
+imprimirTablasDeMultiplicacion();
 
+/*
 Desafío de programación #5: Calcula el resultado de la suma de los numeros del 1 al 10 en un array.
  [1,2,3,4,5,6,7,8,9,10]
+*/
+function calcularSumaUnoAlDiez(){
+  let sumaElementos = 0;
+  for (let i = 0; i < array.length; i++){
+    sumaElementos += array[i];
+  };
+  return sumaElementos; 
+}
+calcularSumaUnoAlDiez([1,2,3,4,5,6,7,8,9,10]);
 
- 1 + 2 + 3 + ... + 10 = ? //hacerlo con un array y un bucle
-
+/*
 Desafío de programación #6: Calcula 10! (10 factorial)
+*/
+function calcularFactorialDeDiez(){
+  let factorialDeDiez = 10;
+  for (let i = 9; i >= 1; i--){
+    factorialDeDiez *= i;
+  }
+  return factorialDeDiez;
+}
+calcularFactorialDeDiez();
 
- 10 * 9 * 8 * ... * 1
-
+ /*
 Desafío de programación #7: Calcula la suma de todos los números impares mayores que 10 y menores que 30
+*/
+function calcularSumaImparesEntreDiezYTreinta(){
+  let sumaImpares = 0;
+  for(let i = 11; i <= 30; i+= 2) {
+    sumaImpares += i;
+  }
+  return sumaImpares;
+};
+calcularSumaImparesEntreDiezYTreinta();
 
+/*
 Desafío de programación #8: Crea una función que convierta de Celsius a Fahrenheit
+*/
+function convertirDeCelsiusAFahrenheit(celsius){
+  return (celsius * (9 / 5)) + 32;
+}
+convertirDeCelsiusAFahrenheit(15);
 
+/*
 Desafío de programación #9: Crea una función que convierta de Fahrenheit a Celsius
+*/
+function convertirDeFahrenheitACelsius(fahrenheit){
+  return (fahrenheit - 32) * (5 / 9);
+}
+convertirDeFahrenheitACelsius(59);
 
+/*
 Desafío de programación #10: Calcula la suma de todos los números en un array de números
-
+*/
+function calcularSumaArray(array){
+  let sumaElementos = 0;
+  for (let i = 0; i < array.length; i++){
+    sumaElementos += array[i];
+  };
+  return sumaElementos; 
+}
+calcularSumaArray([10,25,100,42,37]);
+/*
 Desafío de programación #11: Calcula el promedio de todos los números en un array de números. (en una función)
+*/
+function calcularPromedio(array){
+  let sumaElementosArray = 0;
+  for (let i = 0; i < array.length; i++){
+      sumaElementosArray += array[i];
+  };
+  return sumaElementosArray / array.length;
+}
+calcularPromedio([12,18,35,45]);
 
+/*
 Desafío de programación #12: Crea una función que reciba un array de números y devuelva un array conteniendo solo los números positivos
+*/
+function devolverNumerosPositivosDeUnArray(array){
+  let arrayDePositivos = [];
+  for (let i = 0; i < array.length; i++){
+    if (array[i] >= 0) {
+      arrayDePositivos.push(array[i]);
+    }
+  }
+  return arrayDePositivos;
+};
+devolverNumerosPositivosDeUnArray([-3,5,17,42,-9]);
 
-Desafío de programación #13: Find the maximum number in an array of numbers
+/*
+Desafío de programación #13: Encontrar el número máximo en un array de números.
+*/
+function encontrarNumeroMaximoEnArray(array){
+  let numeroMaximo = 0;
+  for (let i = 0; i < array.length; i++){
+    if (array[i] > numeroMaximo){
+      numeroMaximo = array[i];
+    }
+  }
+  return numeroMaximo;
+}
+encontrarNumeroMaximoEnArray([1,45,-3,17,55,-9,16,142,-20]);
 
+/*
 Desafío de programación #14: Imprimir los primeros 10 dígitos de Fibonacci sin recursión
+*/
+function primerosDiezFibonacci(){
+  let numeroAImprimir = 0;
+  let numeroTemporal = 1;
+  let numeroSiguiente;
+  for (let i = 0; i <= 10; i++){
+    console.log(numeroAImprimir);
+    numeroSiguiente = numeroAImprimir + numeroTemporal;
+    numeroAImprimir = numeroTemporal;
+    numeroTemporal = numeroSiguiente;
+  }
+}
+primerosDiezFibonacci();
 
-Fibonacci (lo buscan en google si no lo saben o no se acuerdan)
-El resultado debería ser: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55
-
+/*
 Desafío de programación #15: Crear una función que encuentre el número n de Fibonacci usando recursión
+*/
+function calcularFibonacci(n){
+  if (n <= 1){
+    return n;
+  } else {
+    return calcularFibonacci(n-1) + calcularFibonacci(n-2);
+  }
+}
+calcularFibonacci(10);
 
+/*
 Desafío de programación #16: Crear una función que dado un número retorne un Boolean (true/false) dependiendo si es primo o no.
+*/
+function controlarSiEsNumeroPrimo(numero){
+  let esPrimo = true;
+  for (let i = 2; i <= Math.sqrt(numero); i++){
+    if (numero % i === 0) {
+      esPrimo = false;
+    }
+  }
+  return esPrimo;
+}
+controlarSiEsNumeroPrimo(7);
 
+/*
 Desafío de programación #17: Calcular la suma de los dígitos positivos de un número entero positivo
-Ejemplo:
-   123 = 1 + 2 + 3 = 6
-   2 = 2
-   1234 = 1 + 2 + 3 + 4 = 10
+*/
+function sumarDigitosDeUnNumero(numero){
+  let suma = 0;
+  let arrayDelNumero = String(numero).split('');
+  for (let i = 0; i < arrayDelNumero.length; i++){
+    suma += Number(arrayDelNumero[i]);
+  }
+  return suma;
+}
+sumarDigitosDeUnNumero(12345);
 
+/*
 Desafío de programación #18: Imprimir los primeros 100 números primos
 
 Desafío de programación #19: Crear una función que retorne un array con los primeros números "n-primos" mayores que un número particular definido "alComienzo"
