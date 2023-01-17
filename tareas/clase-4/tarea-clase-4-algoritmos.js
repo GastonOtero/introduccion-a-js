@@ -212,41 +212,133 @@ sumarDigitosDeUnNumero(12345);
 
 /*
 Desafío de programación #18: Imprimir los primeros 100 números primos
+*/
+function imprimirPrimerosCienPrimos(){
+  let contador = 0;
+  let numeroAEvaluar = 2;
+  while (contador < 100){
+    if (calcularSiEsPrimo(numeroAEvaluar)){
+      console.log(numeroAEvaluar);
+      contador++
+    }
+    numeroAEvaluar++
+  }
+}
 
+function calcularSiEsPrimo(numero){
+  let esPrimo = true;
+  for (let i = 2; i <= Math.sqrt(numero); i++){
+    if (numero % i === 0) {
+      esPrimo = false;
+    }
+  }
+  return esPrimo;
+};
+
+imprimirPrimerosCienPrimos();
+
+/*
 Desafío de programación #19: Crear una función que retorne un array con los primeros números "n-primos" mayores que un número particular definido "alComienzo"
-Ejemplo:
-  Quiero los primeros 4 números primos mayores que 5, el resultado debería ser: [7,11,13,17,19]
+*/
+function calcularNPrimos(n, alComienzo){
+  let nPrimos = [];
+  let numeroAEvaluar = alComienzo + 1;
+  for (let i = 1; i <= n; i++){
+    while(!calcularSiEsPrimo(numeroAEvaluar)){
+      numeroAEvaluar++
+    }
+    if (calcularSiEsPrimo(numeroAEvaluar)){
+      nPrimos.push(numeroAEvaluar);
+      numeroAEvaluar++;
+    }
+    }
+    return nPrimos;
+  }
 
+  calcularNPrimos();
+// llamo directamente a calcularSiEsPrimo porque está declarada en el ejercicio anterior (linea 228)
+
+/*
 Desafío de programación #20: Rotar un array hacia la izquierda una posición
-Ejemplo:
-  [9,1,2,3,4] debería quedar como [1,2,3,4,9]
-  [5] debería quedar como [5]
-  [4,3,2,1] debería quedar como [3,2,1,4]
+*/
+function rotarUnoALaIzquierda(array){
+  let temporalUno = array[0];
+  let temporalDos;
+  
+  for(let i = 0; i < array.length; i++){
+    temporalDos = array[i + 1];
+    array[i] = temporalDos;
+  }
+  array[array.length - 1] = temporalUno;
+  return array;
+}
 
+rotarUnoALaIzquierda([1,2,3,4]);
+/*
 Desafío de programación #21: Rotar un array a la derecha una posición
-Ejemplo:
-  [2,3,4,1] debería quedar como [1,2,3,4]
-  [2,3] debería quedar como [3,2]
+*/
+function rotarUnoALaDerecha(array){
+  let temporalUno = array[array.length-1];
+  let temporalDos 
+  
+  for(let i = array.length - 1; i > 0; i--){
+    temporalDos = array[i-1]
+    array[i] = temporalDos;
 
+  }
+  array[0] = temporalUno;
+  return array;
+}
+
+rotarUnoALaDerecha([1,2,3,4]);
+
+/*
 Desafío de programación #22: Invertir un array
-Ejemplo:
-  [1,2,3,4] debería quedar como [4,3,2,1]
-  [6,5,4,3,2,1] debería quedar como [1,2,3,4,5,6]
-  [5,6,3] debería quedar como [3,6,5]
+*/
+function invertirArray(array){
+  let arrayInvertido = [];
+  for (let i = array.length; i >= 0; i--){
+    arrayInvertido.push(array[i]);
+  }
+  return arrayInvertido;
+}
 
+invertirArray([1,2,3,4]);
+
+/*
 Desafío de programación #23: Invertir una cadena de caracteres
-Ejemplo:
-  "dabale arroz a la zorra el abad" debería quedar como "daba le arroz al a zorra elabad"
-  "bienvenido" debería quedar como "odinevneib"
+*/
+function invertirString(string){
+  let stringInvertido = "";
+  for (let i = string.length - 1; i >= 0; i--){
+    let temporal = string[i];
+    stringInvertido += temporal;
+  }
+  return stringInvertido;
+}
 
+invertirString("bienvenido")
+
+/*
 Desafío de programación #24: Crear una función que reciba dos dos arrays (arreglos) como argumentos y returne el resultado en un nuevo arreglo
-Ejemplo:
-  [1,2,3] con ["a","b","c"] debería quedar como [1,2,3,"a","b","c"]
+*/
+function concatenarArrays(arrayUno, arrayDos){
+  let arrayFinal = [];
+  for (let i = 0; i < arrayUno.length; i++){
+    arrayFinal.push(arrayUno[i]);
+  }
+  for (let i = 0; i < arrayDos.length; i++){
+    arrayFinal.push(arrayDos[i]);
+  }
+  return arrayFinal;
+}
 
-
+/*
 Desafío de programación #25: Crear una función que reciba dos arrays (arreglos) de números como argumentos y retorne un array con números que estén en uno u otro array, pero NO en ambos.
 Nota: Esto se llama "diferencia simétrica" entre conjuntos
+*/
 
+/*
 Desafío de programación #25: Crear una función que reciba dos arrays (arreglos) de números como argumentos y retorne un array con números que estén en uno u otro array, pero NO en ambos.
 Ejemplo:
   [1,2,3] y [3,7,11] debería devolver [1,2,7,11]
