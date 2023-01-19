@@ -4,9 +4,6 @@ $calcularTiempoTotal.onclick = function(evento) {
     const obtenerHoras = document.querySelectorAll(".horas");
     const obtenerMinutos = document.querySelectorAll(".minutos");
     const obtenerSegundos = document.querySelectorAll(".segundos");
-    console.log(obtenerHoras);
-    console.log(obtenerMinutos);
-    console.log(obtenerSegundos);
     const horas = calculaTotalHoras(obtenerHoras);
     const minutos = calculaTotalMinutos(obtenerMinutos);
     const segundos = calculaTotalSegundos(obtenerSegundos);
