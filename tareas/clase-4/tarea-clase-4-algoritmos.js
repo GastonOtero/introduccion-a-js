@@ -356,32 +356,61 @@ Ejemplo:
 
 ==== FALTAN TRADUCIR
 Desafío de programación #28: Calculate the sum of first 100 prime numbers
+* Calcular la suma de los primeros 100 números primos.
 Desafío de programación #29: Print the distance between the first 100 prime numbers
+* Imprimir la distancia entre los primeros 100 números primos.
+  (ej. la distancia entre 3 y 2 es 1, entre 5 y 3 es 2, entre 7 y 5 es 2, etc.. )
 Desafío de programación #30-a: Create a function that will add two positive numbers of indefinite size. The numbers are received as strings and the result should be also provided as string.
 Desafío de programación #30-b: Create a function that will add two positive numbers of indefinite size. The numbers are received as strings and the result should be also provided as string.
+* Crear una función que sume dos números positivos de tamaño indefinido. Deberá recibir los números como strings y devolver el resultado como un string.
 Desafío de programación #31-a. Create a function that will return the number of words in a text
 Desafío de programación #31-b. Create a function that will return the number of words in a text
+* Crear una función que devuelva el número de palabras que hay en un texto.
 Desafío de programación #32. Create a function that will capitalize the first letter of each word in a text
+* Crear una función que ponga en mayúsculas la primer letra de cada palabra en un texto.
 Desafío de programación #33. Calculate the sum of numbers received in a comma delimited string
+* Calcular la suma de los números recibidos en un string separado por comas (ej. ("1.5, 2.3, 3.1, 4, 5.5, 6, 7, 8, 9, 10.9"))
 Desafío de programación #34. Create a function that will return an array with words inside a text
+* Crear una función que devuelva un array que contenga las palabras de un texto
 Desafío de programación #35. Create a function to convert a CSV text to a “bi-dimensional” array
+* Crear una función que convierta un texto en formato CSV (comma separated values) a un array de dos dimensiones 
+  (ej: "John;Smith;954-000-0000\nMich;Tiger;305-000-0000\nMonique;Vasquez;103-000-0000")
 Desafío de programación #36. Create a function that converts a string to an array of characters
+* Crear una función que convierta un string a un array de caracteres
 Desafío de programación #37. Create a function that will convert a string in an array containing the ASCII codes of each character
+* Crear una función que convierta un string a un array que contega el código ASCII de cada caracter
+  (https://elcodigoascii.com.ar/)
 Desafío de programación #38. Create a function that will convert an array containing ASCII codes in a string
+* Crear una función que convierta un array que continene códigos ASCII en un string
 Desafío de programación #39. Implement the Caesar cypher
+* Implementar el Caeasar cypher (cifrado César) (https://es.wikipedia.org/wiki/Cifrado_C%C3%A9sar  / https://en.wikipedia.org/wiki/Caesar_cipher)
 Desafío de programación #40. Implement the bubble sort algorithm for an array of numbers
+* Implementar el algoritmo bubble sort sobre un array de números (https://en.wikipedia.org/wiki/Bubble_sort)
 Desafío de programación #41. Create a function to calculate the distance between two points defined by their x, y coordinates
+* Crear una función que calcule la distancia entre dos puntos definida por sus coordenadas x, y.
 Desafío de programación #42. Create a function that will return a Boolean value indicating if two circles defined by center coordinates and radius are intersecting
+* Crear una función que devuelva un valor booleano que indique si dos círculos definidos por coordenadas centrales y radio se cruzan
 Desafío de programación 43. Create a function that will receive a bi-dimensional array as argument and a number and will extract as a unidimensional array the column specified by the number
+* Crear una función que reciba como argumentos un array de dos dimensiones y un número, y extraiga un array unidimensional con la columna especificada por el número
 Desafío de programación #44. Create a function that will convert a string containing a binary number into a number
+* Crear una función que convierta un string que contenga un número binario en un número
 Desafío de programación #45. Create a function to calculate the sum of all the numbers in a jagged array (array contains numbers or other arrays of numbers on an unlimited number of levels)
+* Crear una función que calcule la suma de todos los números en un array dentado. (Array dentado o matriz dentada: array cuyos elementos son arrays de distinta longitud)
 Desafío de programación #46-a. Find the maximum number in a jagged array of numbers or array of numbers
 Desafío de programación #46-b. Find the maximum number in a jagged array of numbers or array of numbers
+* Encontrar el número máximo en un array de números o array dentado de números.
 Desafío de programación #47. Deep copy a jagged array with numbers or other arrays in a new array
+* Hacer un deep copy de un array dentado con números u otros arrays a un nuevo array (https://mauriciogc.medium.com/javascript-shallow-copy-and-deep-copy-757bd5fb0c76)
 Desafío de programación #48. Create a function to return the longest word(s) in a string
+* Crear una función que devuelva la/s palabra/s más larga/s en un string
 Desafío de programación #49. Shuffle an array of strings
+* Mezclar un array de strings
 Desafío de programación #50. Create a function that will receive n as argument and return an array of n unique random numbers from 1 to n.
+* Crear una función que reciba un número n como argumento y devuelva un array de n números al azar de 1 a n
 Desafío de programación #51. Find the frequency of characters inside a string. Return the result as an array of objects. Each object has 2 fields: character and number of occurrences.
+* Encontrar la frecuencia en la que aparecen los caracteres de un string. Devolver el resultado en un array de objetos. Cada objeto tiene 2 campos: caracter y cantidad de apariciones
 Desafío de programación #52. Calculate Fibonacci(500) with high precision (all decimals)
+* Calcular Fibonacci(500) con alta precisión (todos los decimales)
 Desafío de programación #53. Calculate 70! with high precision (all decimals)
+* Calcular el factorial de 70 con alta precisión (todos los decimales)
  */
