@@ -1,61 +1,61 @@
 const $calcularResultados = document.querySelector("#calcular");
 const $listaDeNumeros = document.querySelectorAll(".numero");
-const arrayDeNumeros = [];
+const numeros = [];
 
 $calcularResultados.onclick = function(evento) {
     for (let i = 0; i < $listaDeNumeros.length; i++){
-        arrayDeNumeros.push($listaDeNumeros[i].innerText);
+        numeros.push($listaDeNumeros[i].innerText);
     }
-    document.querySelector("#promedio").innerText = `El promedio es ${calcularPromedio(arrayDeNumeros)}`;
-    document.querySelector("#numero-menor").innerText = `El número más pequeño es ${calcularNumeroMenor(arrayDeNumeros)}`;
-    document.querySelector("#numero-mayor").innerText = `El número más grande es ${calcularNumeroMayor(arrayDeNumeros)}`;
-    document.querySelector("#numero-mas-frecuente").innerText = `El número más frecuente es ${calcularNumeroMasFrecuente(arrayDeNumeros)}`;
+    document.querySelector("#promedio").innerText = `El promedio es ${calcularPromedio(numeros)}`;
+    document.querySelector("#numero-menor").innerText = `El número más pequeño es ${calcularNumeroMenor(numeros)}`;
+    document.querySelector("#numero-mayor").innerText = `El número más grande es ${calcularNumeroMayor(numeros)}`;
+    document.querySelector("#numero-mas-frecuente").innerText = `El número más frecuente es ${calcularNumeroMasFrecuente(numeros)}`;
 
 }
 
-function calcularPromedio(arrayDeNumeros) {
+function calcularPromedio(numeros) {
     let suma = 0;
-    for (let i = 0; i < arrayDeNumeros.length; i++){
-        suma += Number(arrayDeNumeros[i]);
+    for (let i = 0; i < numeros.length; i++){
+        suma += Number(numeros[i]);
     }
-    return suma / arrayDeNumeros.length;
+    return suma / numeros.length;
 }
 
-function calcularNumeroMenor(arrayDeNumeros) {
-    let menor = arrayDeNumeros[0];
-    for (let i = 1; i < arrayDeNumeros.length; i++){
-        if (arrayDeNumeros[i] < menor) {
-            menor = arrayDeNumeros[i];
+function calcularNumeroMenor(numeros) {
+    let menor = numeros[0];
+    for (let i = 1; i < numeros.length; i++){
+        if (numeros[i] < menor) {
+            menor = numeros[i];
         }
     }
     return menor;
 }
 
-function calcularNumeroMayor(arrayDeNumeros) {
-    let mayor = arrayDeNumeros[0];
-    for (let i = 1; i < arrayDeNumeros.length; i++){
-        if (arrayDeNumeros[i] > mayor){
-            mayor = arrayDeNumeros[i]
+function calcularNumeroMayor(numeros) {
+    let mayor = numeros[0];
+    for (let i = 1; i < numeros.length; i++){
+        if (numeros[i] > mayor){
+            mayor = numeros[i]
         }
     }
     return mayor;
 }
 
-//es horrible y la tuve que googlear, pero quería resolverlo sin métodos
-function calcularNumeroMasFrecuente(arrayDeNumeros) {
+
+function calcularNumeroMasFrecuente(numeros) {
     let mayorFrecuencia = 0;
     let elementoMasFrecuente;
 
-    for (let i = 0; i < arrayDeNumeros.length; i++){
+    for (let i = 0; i < numeros.length; i++){
         let cuenta = 0;
-        for (let j = 0; j < arrayDeNumeros.length; j++){
-            if (arrayDeNumeros[i] === arrayDeNumeros[j]){
+        for (let j = 0; j < numeros.length; j++){
+            if (numeros[i] === numeros[j]){
                 cuenta ++;
             }
         }
         if (cuenta > mayorFrecuencia) {
             mayorFrecuencia = cuenta;
-            elementoMasFrecuente = arrayDeNumeros[i];
+            elementoMasFrecuente = numeros[i];
         }
     }
     return elementoMasFrecuente;
