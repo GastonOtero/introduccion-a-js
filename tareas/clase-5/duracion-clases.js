@@ -26,11 +26,11 @@ calculaDuracionTotal = function(horas, minutos, segundos){
     let segundosFinales;
 
     segundosFinales = segundos % 60;
-    const segundosAMinutos = (segundos - segundosFinales) / 60;
+    const segundosAMinutos = Math.floor((segundos - segundosFinales) / 60);
     minutos += segundosAMinutos;
 
     minutosFinales = minutos % 60;
-    const minutosAHoras = (minutos - minutosFinales) / 60;
+    const minutosAHoras = Math.floor((minutos - minutosFinales) / 60);
     horas += minutosAHoras;
 
 
