@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>Tarea 6</title>
+</head>
+<body>
+    <form id="integrantes">
+        <label>Ingresá la cantidad de integrantes en tu grupo familiar</label>
+        <input type="number" id="integrantes-cantidad">
+        <button id="integrantes-cantidad-obtener">Confirmar</button>
+    </form>
+    <div id="integrantes-edades"></div>
+    <div id="integrantes-edades-calculos" class="oculto">
+        <ul>
+            <li>
+                <p>La mayor edad entre los integrantes es <span id="integrantes-edades-mayor"></span> años</p>
+            </li>
+            <li>
+                <p>La menor edad entre los integrantes es <span id="integrantes-edades-menor"></span> años</p>
+            </li>
+            <li>
+                <p>El promedio entre las edades de los integrantes es <span id="integrantes-edades-promedio"></span> años</p>
+            </li>
+        </ul>
+    </div>
+    <script src="tarea-clase-6.js"></script>
+</body>
+</html>
