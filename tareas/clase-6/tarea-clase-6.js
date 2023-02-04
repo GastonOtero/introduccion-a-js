@@ -6,6 +6,61 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
 
+$obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantidad-obtener");
+$obtenerCantidadIntegrantes.onclick = function(evento){
+    const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
+    crearIntegrantes(cantidadIntegrantes);
+}
+
+function crearIntegrantes(cantidad) {
+    for (let i = 0; i < cantidad; i++){
+        crearIntegrante()
+    }
+}
+
+function crearIntegrante() {
+    const $div = document.createElement("div");
+    const $label = document.createElement("label");
+    $label.innerText = "Edad del integrante: "
+    const $input = document.createElement("input");
+    $input.type = "Number"
+
+    $div.appendChild($label);
+    $div.appendChild($input);
+
+    document.querySelector("#integrantes-edades").appendChild($div);
+}
+
+
+// Funciones de cálculo 
+
+function calcularPromedio(numeros) {
+    let total = 0;
+    for (let i = 0; i < numeros.length; i++){
+        total += numeros[i];
+    }
+    return total / numeros.length;
+}
+
+function calcularMayor(numeros) {
+    let mayorTemporal = numeros[0];
+    for (let i = 1; i < numeros.length; i++){
+        if (numeros[i] > mayorTemporal){
+            mayorTemporal = numeros[i];
+        }
+    }
+    return mayorTemporal;
+}
+
+function calcularMenor(numeros) {
+    let menorTemporal = numeros[0];
+    for (let i = 1; i < numeros.length; i++) {
+        if (numeros[i] < menorTemporal) {
+            menorTemporal = numeros[i];
+        }
+    }
+    return menorTemporal;
+}
 
 /*
 TAREA:
