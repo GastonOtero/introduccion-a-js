@@ -12,6 +12,11 @@ $obtenerCantidadIntegrantes.onclick = function(evento){
     crearIntegrantes(cantidadIntegrantes);
 }
 
+$calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
+$calcularCantidadIntegrantes.onclick = function(evento) {
+    
+}
+
 function crearIntegrantes(cantidad) {
     for (let i = 0; i < cantidad; i++){
         crearIntegrante()
@@ -24,11 +29,21 @@ function crearIntegrante() {
     $label.innerText = "Edad del integrante: "
     const $input = document.createElement("input");
     $input.type = "Number"
+    $input.className ="edad-integrante";
 
     $div.appendChild($label);
     $div.appendChild($input);
 
     document.querySelector("#integrantes-edades").appendChild($div);
+}
+
+function obtenerEdadesIntegrantes() {
+    let edadesIntegrantes = [];
+    const $edadesIntegrantes = document.querySelectorAll(".edad-integrante");
+    for (let i = 0; i < $edadesIntegrantes.length; i++) {
+        edadesIntegrantes.push($edadesIntegrantes[i]);
+    }
+    return edadesIntegrantes;
 }
 
 
