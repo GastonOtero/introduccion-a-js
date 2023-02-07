@@ -7,15 +7,19 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 */
 
 const $obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantidad-obtener");
+
 $obtenerCantidadIntegrantes.onclick = function(evento){
     const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
     crearIntegrantes(cantidadIntegrantes);
+    
     document.querySelector("#integrantes-edades-calcular").className = "";
     document.querySelector("#integrantes-edades-borrar").className = "";
+
     event.preventDefault();
 }
 
 const $calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
+
 $calcularCantidadIntegrantes.onclick = function(evento) {
     document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(obtenerEdadesIntegrantes());
     document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(obtenerEdadesIntegrantes());
@@ -29,6 +33,7 @@ $borrarCampos.onclick = function(evento) {
     document.querySelector("#integrantes-edades-calculos").className ="oculto";
     $calcularCantidadIntegrantes.className = "oculto";
     $borrarCampos.className = "oculto";
+    borrarIntegrantes();
 } 
 
 
@@ -40,11 +45,12 @@ function crearIntegrantes(cantidad) {
 
 function crearIntegrante() {
     const $div = document.createElement("div");
+    $div.className ="integrante";
     const $label = document.createElement("label");
     $label.innerText = "Edad del integrante: "
     const $input = document.createElement("input");
     $input.type = "Number"
-    $input.className ="edad-integrante";
+    $input.className ="edad-integrante"
 
     $div.appendChild($label);
     $div.appendChild($input);
@@ -61,6 +67,12 @@ function obtenerEdadesIntegrantes() {
     return edadesIntegrantes;
 }
 
+function borrarIntegrantes() {
+    const $integrantes = document.querySelectorAll(".integrante")
+    for (let i = 0; i < $integrantes.length; i++){
+        $integrantes[i].remove();
+    }
+}
 
 // Funciones de cálculo 
 
