@@ -6,16 +6,31 @@ Al hacer click en "calcular", mostrar en un elemento pre-existente la mayor edad
 Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuevamente, borrando los inputs ya creados (investigar cómo en MDN).
 */
 
-$obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantidad-obtener");
+const $obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantidad-obtener");
 $obtenerCantidadIntegrantes.onclick = function(evento){
     const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
     crearIntegrantes(cantidadIntegrantes);
+    document.querySelector("#integrantes-edades-calcular").className = "";
+    document.querySelector("#integrantes-edades-borrar").className = "";
+    event.preventDefault();
 }
 
-$calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
+const $calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
 $calcularCantidadIntegrantes.onclick = function(evento) {
-    
+    document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(obtenerEdadesIntegrantes());
+    document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(obtenerEdadesIntegrantes());
+    document.querySelector("#integrantes-edades-promedio").innerText = calcularPromedio(obtenerEdadesIntegrantes());
+    document.querySelector("#integrantes-edades-calculos").className = "";
 }
+
+const $borrarCampos = document.querySelector("#integrantes-edades-borrar");
+$borrarCampos.onclick = function(evento) {
+    document.querySelector("#integrantes-cantidad").value = "";
+    document.querySelector("#integrantes-edades-calculos").className ="oculto";
+    $calcularCantidadIntegrantes.className = "oculto";
+    $borrarCampos.className = "oculto";
+} 
+
 
 function crearIntegrantes(cantidad) {
     for (let i = 0; i < cantidad; i++){
@@ -41,7 +56,7 @@ function obtenerEdadesIntegrantes() {
     let edadesIntegrantes = [];
     const $edadesIntegrantes = document.querySelectorAll(".edad-integrante");
     for (let i = 0; i < $edadesIntegrantes.length; i++) {
-        edadesIntegrantes.push($edadesIntegrantes[i]);
+        edadesIntegrantes.push(Number($edadesIntegrantes[i].value));
     }
     return edadesIntegrantes;
 }
