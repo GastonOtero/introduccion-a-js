@@ -10,11 +10,11 @@ const $obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantida
 
 $obtenerCantidadIntegrantes.onclick = function(evento){
     const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
-    crearIntegrantes(cantidadIntegrantes);
     
-    document.querySelector("#integrantes-edades-calcular").className = "";
-    document.querySelector("#integrantes-edades-borrar").className = "";
-
+    borrarIntegrantes();
+    crearIntegrantes(cantidadIntegrantes);
+    mostrarBotones();
+    
     event.preventDefault();
 }
 
@@ -28,14 +28,13 @@ $calcularCantidadIntegrantes.onclick = function(evento) {
 }
 
 const $borrarCampos = document.querySelector("#integrantes-edades-borrar");
+
 $borrarCampos.onclick = function(evento) {
     document.querySelector("#integrantes-cantidad").value = "";
     document.querySelector("#integrantes-edades-calculos").className ="oculto";
-    $calcularCantidadIntegrantes.className = "oculto";
-    $borrarCampos.className = "oculto";
+    ocultarBotones();
     borrarIntegrantes();
 } 
-
 
 function crearIntegrantes(cantidad) {
     for (let i = 0; i < cantidad; i++){
@@ -73,6 +72,17 @@ function borrarIntegrantes() {
         $integrantes[i].remove();
     }
 }
+
+function ocultarBotones() {
+    $calcularCantidadIntegrantes.className = "oculto";
+    $borrarCampos.className = "oculto";
+}
+
+function mostrarBotones() {
+    $calcularCantidadIntegrantes.className = "";
+    $borrarCampos.className = "";
+}
+
 
 // Funciones de cálculo 
 
