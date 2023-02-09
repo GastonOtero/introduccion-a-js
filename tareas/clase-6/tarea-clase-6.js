@@ -21,9 +21,10 @@ $obtenerCantidadIntegrantes.onclick = function(evento){
 const $calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
 
 $calcularCantidadIntegrantes.onclick = function(evento) {
-    document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(obtenerEdadesIntegrantes());
-    document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(obtenerEdadesIntegrantes());
-    document.querySelector("#integrantes-edades-promedio").innerText = calcularPromedio(obtenerEdadesIntegrantes());
+    const numeros = obtenerEdadesIntegrantes()
+    document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(numeros);
+    document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(numeros);
+    document.querySelector("#integrantes-edades-promedio").innerText = calcularPromedio(numeros);
     document.querySelector("#integrantes-edades-calculos").className = "";
 }
 
@@ -45,8 +46,10 @@ function crearIntegrantes(cantidad) {
 function crearIntegrante() {
     const $div = document.createElement("div");
     $div.className ="integrante";
+
     const $label = document.createElement("label");
     $label.innerText = "Edad del integrante: "
+    
     const $input = document.createElement("input");
     $input.type = "Number"
     $input.className ="edad-integrante"
