@@ -12,6 +12,7 @@ $obtenerCantidadIntegrantes.onclick = function(evento){
     const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
     
     borrarIntegrantes();
+    ocultarCalculos();
     crearIntegrantes(cantidadIntegrantes);
     mostrarBotones();
     
@@ -25,14 +26,14 @@ $calcularCantidadIntegrantes.onclick = function(evento) {
     document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(numeros);
     document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(numeros);
     document.querySelector("#integrantes-edades-promedio").innerText = calcularPromedio(numeros);
-    document.querySelector("#integrantes-edades-calculos").className = "";
+    mostrarCalculos();
 }
 
 const $borrarCampos = document.querySelector("#integrantes-edades-borrar");
 
 $borrarCampos.onclick = function(evento) {
     document.querySelector("#integrantes-cantidad").value = "";
-    document.querySelector("#integrantes-edades-calculos").className ="oculto";
+    ocultarCalculos();
     ocultarBotones();
     borrarIntegrantes();
 } 
@@ -86,6 +87,13 @@ function mostrarBotones() {
     $borrarCampos.className = "";
 }
 
+function mostrarCalculos() {
+    document.querySelector("#integrantes-edades-calculos").className = "";
+}
+
+function ocultarCalculos() {
+    document.querySelector("#integrantes-edades-calculos").className ="oculto";
+}
 
 // Funciones de cálculo 
 
@@ -94,7 +102,7 @@ function calcularPromedio(numeros) {
     for (let i = 0; i < numeros.length; i++){
         total += numeros[i];
     }
-    return total / numeros.length;
+    return parseInt(total / numeros.length);
 }
 
 function calcularMayor(numeros) {
