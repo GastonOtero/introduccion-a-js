@@ -1,5 +1,37 @@
+const $agregarIntegrante = document.querySelector("#agregar-integrante");
+const $quitarIntegrante = document.querySelector("#quitar-integrante");
 
 
+$agregarIntegrante.onclick = agregarIntegrante();
+$quitarIntegrante.onclick = quitarIntegrante();
+
+
+function agregarIntegrante(evento) {
+    const $integrantes = document.querySelector("#integrantes");
+    
+    const $div = document.createElement("div");
+    $div.className ="integrante";
+
+    const $label = document.createElement("label");
+    $label.innerText = "Ingresá el salario anual del integrante";
+
+    const $input = document.createElement("input");
+    $input.className ="integrante-salario";
+
+    $div.appendChild($label);
+    $div.appendChild($input);
+
+    $integrantes.appendChild($div);
+
+    event.preventDefault()
+}
+
+
+function quitarIntegrante(evento) {
+    let $salariosIntegrantes = document.querySelectorAll(".integrante");
+    $salariosIntegrantes[$salariosIntegrantes.length - 1].remove();
+    event.preventDefault();
+}
 
 
 // Funciones de cálculo 
