@@ -41,7 +41,6 @@ if (operador === '+') {
 console.log(
     `El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`
 );
-
 */
 
 let operador = prompt('Qué operación querés realizar? ingresá +, -, * o /');
@@ -59,6 +58,7 @@ function sumar(numero1, numero2) {
 function restar(numero1, numero2) {
     return numero1 - numero2;
 }
+
 
 function multiplicar(numero1, numero2){
     return numero1 * numero2;
