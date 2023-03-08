@@ -17,7 +17,7 @@
 //
 
 // TAREA: Cambiar el operador a '-', y fijarse que llame a la función 'restar' en vez de a la de 'sumar'.
-
+/*
 function sumar(numero1, numero2) {
     return numero1 + numero2;
 }
@@ -41,4 +41,44 @@ if (operador === '+') {
 console.log(
     `El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`
 );
+*/
 
+let operador = prompt('Qué operación querés realizar? ingresá +, -, * o /');
+while (!/[+\-*\/]/.test(operador)) {
+    operador = prompt('No ingresaste un operador válido, ingresá +, -, * o /');
+}
+
+const numero1 = Number(prompt('Ingresá el primer número'));
+const numero2 = Number(prompt('Ingresá el segundo número'));
+
+function sumar(numero1, numero2) {
+    return numero1 + numero2;
+}
+
+function restar(numero1, numero2) {
+    return numero1 - numero2;
+}
+
+function multiplicar(numero1, numero2){
+    return numero1 * numero2;
+}
+
+function dividir(numero1, numero2){
+    return numero1 / numero2;
+}
+
+let resultado;
+
+if (operador === '+') {
+    resultado = sumar(numero1, numero2);    
+} else if (operador === '-'){
+    resultado = restar(numero1, numero2);
+} else if (operador === '*'){
+    resultado = multiplicar(numero1, numero2);
+} else if (operador === '/'){
+    resultado = dividir(numero1, numero2)
+}
+
+console.log(
+    `El resultado de ${numero1} ${operador} ${numero2} es ${resultado}`
+);

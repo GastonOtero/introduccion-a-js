@@ -3,46 +3,63 @@
 // Preguntarle estos datos al usuario y guardarlos en 2 variables
 // Ejecutar la función con estos datos
 // Impriman el resultado en la consola
-function calcularEdad(anioActual, anioNacimiento) {
+
+const anioActual = Number(prompt('Por favor ingresá el año actual'));
+const anioNacimiento = Number(prompt('Ingresá tu año de nacimiento'));
+
+function calcularEdadUsuario (anioActual, anioNacimiento) {
     return anioActual - anioNacimiento;
-}
+};
 
-const anioActual = Number(prompt("Cuál es el año actual?"));
-const anioNacimiento = Number(prompt("En qué año naciste?"));
-
-console.log('Tenés ' + calcularEdad(anioActual, anioNacimiento) + ' años');
+console.log(`Tenés ${calcularEdadUsuario(anioActual, anioNacimiento)} años`);
 
 // Preguntar el salario anual y calcular el salario mensual
 // Preguntar el salario mensual y calcular el anual
 // diario... semanal, por hora. etc.
 
-function calcularSalarioAnual(salarioMensual) {
+
+const salarioMensual = Number(prompt('Cuál es tu salario mensual?'));
+
+function calcularSalarioAnual(salarioMensual){
     const cantidadMesesEnUnAnio = 12;
     return salarioMensual * cantidadMesesEnUnAnio;
-}
+};
+
+console.log(`Tu salario anual es ${calcularSalarioAnual(salarioMensual)}`);
+
+
+const salarioAnual = Number(prompt('Cuál es tu salario anual?'));
 
 function calcularSalarioMensual(salarioAnual) {
     const cantidadMesesEnUnAnio = 12;
-    return salarioAnual / cantidadMesesEnUnAnio;
-}
+    return (salarioAnual / cantidadMesesEnUnAnio).toFixed(2);
+};
+console.log(`Tu salario mensual es ${calcularSalarioMensual(salarioAnual)}`);
 
-function calcularSalarioSemanal(salarioAnual) {
+function calcularSalarioSemanal(salarioAnual){
     const cantidadSemanasEnUnAnio = 52;
-    return salarioAnual / cantidadSemanasEnUnAnio;
+    return (salarioAnual / cantidadSemanasEnUnAnio).toFixed(2);
+};
+
+console.log(`Tu salario semanal es ${calcularSalarioSemanal(salarioAnual)}`);
+
+function calcularSalarioDiario(salarioAnual){
+    const diasLaborablesEnUnAnio = 246;
+    return (salarioAnual / diasLaborablesEnUnAnio).toFixed(2);
+};
+
+//fuente días laborables (2022): https://argentina.workingdays.org/dias_laborables_feriados_2022.htm
+
+console.log(`Tu salario diario es ${calcularSalarioDiario(salarioAnual)}`);
+
+function calcularSalarioPorHora(salarioAnual){
+    const diasLaborablesEnUnAnio = 246;
+    const horasLaborablesEnUnDia = 8;
+    return (salarioAnual / diasLaborablesEnUnAnio / horasLaborablesEnUnDia).toFixed(2);
 }
 
-function calcularSalarioDiario(salarioAnual) {
-    const cantidadDiasEnUnAnio = 365;
-    return salarioAnual / cantidadDiasEnUnAnio;
-}
+console.log(`Tu salario por hora es ${calcularSalarioPorHora(salarioAnual)}`);
 
-const salarioMensual = Number(prompt('Cuál es tu salario mensual?'));
-console.log('Tu salario anual es ' + calcularSalarioAnual(salarioMensual));
-
-const salarioAnual = Number(prompt('Cuál es tu salario mensual?'));
-console.log('Tu salario mensual es ' + calcularSalarioMensual(salarioAnual));
-console.log('Tu salario semanal es ' + calcularSalarioSemanal(salarioAnual));
-console.log('Tu salario diario es ' + calcularSalarioDiario(salarioAnual));
 
 /// SCOPE
 
