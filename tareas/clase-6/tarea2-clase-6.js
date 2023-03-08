@@ -33,12 +33,21 @@ $quitarIntegrante.onclick = function (evento) {
 
 // Funciones de cálculo 
 
+function convertirAMensual(numeros) {
+    const MESES_DEL_ANIO = 12;
+    let salariosMensuales = [];
+    for (let i = 0; i < numeros.length; i++){
+        salariosMensuales.push(numeros[i] / MESES_DEL_ANIO)
+    }
+    return salariosMensuales;
+}
+
 function calcularPromedio(numeros) {
     let total = 0;
     for (let i = 0; i < numeros.length; i++){
         total += numeros[i];
     }
-    return parseInt(total / numeros.length);
+    return (total / numeros.length).toFixed(2);
 }
 
 function calcularMayor(numeros) {
