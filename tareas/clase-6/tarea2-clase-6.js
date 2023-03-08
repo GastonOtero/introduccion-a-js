@@ -2,11 +2,8 @@ const $agregarIntegrante = document.querySelector("#agregar-integrante");
 const $quitarIntegrante = document.querySelector("#quitar-integrante");
 
 
-$agregarIntegrante.onclick = agregarIntegrante();
-$quitarIntegrante.onclick = quitarIntegrante();
 
-
-function agregarIntegrante(evento) {
+$agregarIntegrante.onclick = function (evento) {
     const $integrantes = document.querySelector("#integrantes");
     
     const $div = document.createElement("div");
@@ -27,7 +24,7 @@ function agregarIntegrante(evento) {
 }
 
 
-function quitarIntegrante(evento) {
+$quitarIntegrante.onclick = function (evento) {
     let $salariosIntegrantes = document.querySelectorAll(".integrante");
     $salariosIntegrantes[$salariosIntegrantes.length - 1].remove();
     event.preventDefault();
