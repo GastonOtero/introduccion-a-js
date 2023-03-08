@@ -30,6 +30,23 @@ $quitarIntegrante.onclick = function (evento) {
     event.preventDefault();
 }
 
+
+function obtenerSalarios() {
+    const $salariosIntegrantes = document.querySelectorAll(".integrante-salario");
+    let salariosIntegrantes = [];
+
+    for (let i = 0; i < $salariosIntegrantes.length; i++){
+        if ($salariosIntegrantes[i].value !== "") {
+            salariosIntegrantes.push(Number($salariosIntegrantes[i].value));
+        }
+    }
+    
+    event.preventDefault();
+    
+    return salariosIntegrantes;
+}
+
+
 function mostrarResultados() {
     document.querySelector("#integrantes-salarios-calculos").className="";
 }
