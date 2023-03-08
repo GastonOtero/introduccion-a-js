@@ -30,6 +30,16 @@ $quitarIntegrante.onclick = function (evento) {
     event.preventDefault();
 }
 
+function mostrarResultados() {
+    document.querySelector("#integrantes-salarios-calculos").className="";
+}
+
+
+function ocultarResultados() {
+    document.querySelector("#integrantes-salarios-calculos").className="oculto";
+}
+
+
 
 // Funciones de cálculo 
 
