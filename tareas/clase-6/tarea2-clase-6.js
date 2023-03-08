@@ -1,5 +1,6 @@
 const $agregarIntegrante = document.querySelector("#agregar-integrante");
 const $quitarIntegrante = document.querySelector("#quitar-integrante");
+const $calcularSalarios = document.querySelector("#boton-calculo");
 
 
 
@@ -31,6 +32,15 @@ $quitarIntegrante.onclick = function (evento) {
 }
 
 
+$calcularSalarios.onclick = function (evento) {
+    mostrarSalarios("mayor", calcularMayor(obtenerSalarios()));
+    mostrarSalarios("menor", calcularMenor(obtenerSalarios()));
+    mostrarSalarios("anual-promedio", calcularPromedio(obtenerSalarios()));
+    mostrarSalarios("mensual-promedio", calcularPromedio(convertirAMensual(obtenerSalarios())));
+    mostrarResultados();
+}
+
+
 function obtenerSalarios() {
     const $salariosIntegrantes = document.querySelectorAll(".integrante-salario");
     let salariosIntegrantes = [];
@@ -44,6 +54,11 @@ function obtenerSalarios() {
     event.preventDefault();
     
     return salariosIntegrantes;
+}
+
+
+function mostrarSalarios(tipo, valor) {
+    document.querySelector(`#integrantes-salario-${tipo}`).textContent= valor;
 }
 
 
