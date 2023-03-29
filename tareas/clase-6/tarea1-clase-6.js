@@ -15,7 +15,7 @@ $obtenerCantidadIntegrantes.onclick = function(evento){
     ocultarCalculos();
     crearIntegrantes(cantidadIntegrantes);
     mostrarBotones();
-    
+    validarCantidadIntegrantes(cantidadIntegrantes);
     event.preventDefault();
 }
 
