@@ -8,34 +8,48 @@ Punto bonus: Crear un botón para "empezar de nuevo" que empiece el proceso nuev
 
 const $obtenerCantidadIntegrantes = document.querySelector("#integrantes-cantidad-obtener");
 
-$obtenerCantidadIntegrantes.onclick = function(evento){
+$obtenerCantidadIntegrantes.onclick = function(event){
     const cantidadIntegrantes = document.querySelector("#integrantes-cantidad").value;
-    
+
     borrarIntegrantes();
+    borrarErrores();
     ocultarCalculos();
-    crearIntegrantes(cantidadIntegrantes);
-    mostrarBotones();
-    validarCantidadIntegrantes(cantidadIntegrantes);
+
+    if (!validarNumero(cantidadIntegrantes)) {
+        crearIntegrantes(cantidadIntegrantes);
+        mostrarBotonCalculo();
+    } else {
+        manejarErrorCantidad(validarNumero(cantidadIntegrantes))
+    };
+
     event.preventDefault();
 }
 
 const $calcularCantidadIntegrantes = document.querySelector("#integrantes-edades-calcular");
 
-$calcularCantidadIntegrantes.onclick = function(evento) {
-    const numeros = obtenerEdadesIntegrantes()
+$calcularCantidadIntegrantes.onclick = function(event) {
+    const numeros = obtenerEdadesIntegrantes();
+
+    if (validarEdadesIntegrantes()) {
+        manejarErrores(validarEdadesIntegrantes())
+    } else {
     document.querySelector("#integrantes-edades-mayor").innerText = calcularMayor(numeros);
     document.querySelector("#integrantes-edades-menor").innerText = calcularMenor(numeros);
     document.querySelector("#integrantes-edades-promedio").innerText = calcularPromedio(numeros);
     mostrarCalculos();
+    borrarErrores();
+    }
 }
 
 const $borrarCampos = document.querySelector("#integrantes-edades-borrar");
 
-$borrarCampos.onclick = function(evento) {
+$borrarCampos.onclick = function(event) {
     document.querySelector("#integrantes-cantidad").value = "";
+    document.querySelector("#integrantes-cantidad").className = "";
     ocultarCalculos();
-    ocultarBotones();
+    ocultarBotonCalculo();
     borrarIntegrantes();
+    borrarErrores();
 } 
 
 function crearIntegrantes(cantidad) {
@@ -77,14 +91,12 @@ function borrarIntegrantes() {
     }
 }
 
-function ocultarBotones() {
+function ocultarBotonCalculo() {
     $calcularCantidadIntegrantes.className = "oculto";
-    $borrarCampos.className = "oculto";
 }
 
-function mostrarBotones() {
+function mostrarBotonCalculo() {
     $calcularCantidadIntegrantes.className = "";
-    $borrarCampos.className = "";
 }
 
 function mostrarCalculos() {
@@ -94,7 +106,6 @@ function mostrarCalculos() {
 function ocultarCalculos() {
     document.querySelector("#integrantes-edades-calculos").className ="oculto";
 }
-
 
 /*
 TAREA:
